@@ -68,17 +68,8 @@ function Navbar() {
 
         {/* Icons Right */}
         <div className="flex items-center gap-6 text-zinc-300">
-          <button className="hover:text-cyan-400 transition-colors" aria-label="Search">
-            <Search className="w-5 h-5" />
-          </button>
-          <button className="hover:text-cyan-400 transition-colors" aria-label="Account">
-            <User className="w-5 h-5" />
-          </button>
-          <button className="relative hover:text-cyan-400 transition-colors" aria-label="Cart">
-            <ShoppingBag className="w-5 h-5" />
-            <span className="absolute -top-1.5 -right-2 w-[18px] h-[18px] bg-cyan-500 text-zinc-950 text-[10px] font-black flex items-center justify-center rounded-full leading-none">
-              3
-            </span>
+          <button className="relative hover:text-cyan-400 transition-colors font-bold text-xs tracking-widest" aria-label="Cart">
+            BAG [0]
           </button>
         </div>
       </div>
@@ -151,9 +142,6 @@ function ProductCard({ product }: { product: typeof PRODUCTS[0] }) {
         <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/60 to-transparent" />
         
         <div className="absolute top-4 left-4">
-          <span className="bg-zinc-950 text-zinc-50 text-[10px] font-black uppercase tracking-widest px-3 py-1">
-            New
-          </span>
         </div>
       </div>
 
@@ -246,7 +234,7 @@ export default function KillerFashionHome() {
               KILLER
             </div>
             <p className="text-zinc-500 font-medium max-w-sm text-sm leading-relaxed">
-              Crafted for the urban elite. We don't follow trends, we build the arsenal for the modern aesthetic. Pure utility. Zero compromise.
+              Curating the modern aesthetic. Pure utility. Zero compromise.
             </p>
           </div>
           
