@@ -10,6 +10,7 @@ const PRODUCTS = [
     id: "p1",
     name: "Oversized Heavyweight Hoodie",
     basePrice: 120,
+    image: "/images/hoodie.png",
     colors: [
       { name: "Matte Black", hexCode: "#111827", imageStr: "hoodie-black" },
       { name: "Sage Green", hexCode: "#273824", imageStr: "hoodie-sage" },
@@ -20,6 +21,7 @@ const PRODUCTS = [
     id: "p2",
     name: "Techwear Cargo Pants",
     basePrice: 165,
+    image: "/images/cargo.png",
     colors: [
       { name: "Obsidian", hexCode: "#0f172a", imageStr: "cargo-obsidian" },
       { name: "Olive Drab", hexCode: "#324016", imageStr: "cargo-olive" },
@@ -30,6 +32,7 @@ const PRODUCTS = [
     id: "p3",
     name: "Boxy Graphic Tee",
     basePrice: 55,
+    image: "/images/tee.png",
     colors: [
       { name: "Pure Black", hexCode: "#000000", imageStr: "tee-black" },
       { name: "Vintage White", hexCode: "#e2e8f0", imageStr: "tee-white" },
@@ -40,6 +43,7 @@ const PRODUCTS = [
     id: "p4",
     name: "Tactical Utility Vest",
     basePrice: 140,
+    image: "/images/vest.png",
     colors: [
       { name: "Night Ops", hexCode: "#1c1917", imageStr: "vest-night" },
       { name: "Desert Sand", hexCode: "#a8a29e", imageStr: "vest-sand" },
@@ -84,7 +88,7 @@ function HeroSection() {
       {/* Background Image (Moody Streetwear Focus) */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1542385151-efd9000785a0?q=80&w=2000&auto=format&fit=crop')" }} 
+        style={{ backgroundImage: "url('/images/hero_bg.png')" }} 
       />
       
       {/* Gradient Overlay for bottom blend-in */}
@@ -132,14 +136,19 @@ function ProductCard({ product }: { product: typeof PRODUCTS[0] }) {
     >
       {/* Dynamic Image Area */}
       <div className="relative aspect-[4/5] bg-zinc-800 overflow-hidden">
-        {/* Placeholder Color controlled by user state */}
+        {/* Base Generated Image */}
         <div 
-          className="absolute inset-0 transition-colors duration-700 ease-in-out"
+          className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+          style={{ backgroundImage: `url(${product.image})` }}
+        />
+        {/* Color Overlay Filter to simulate dye effect */}
+        <div 
+          className="absolute inset-0 transition-colors duration-700 ease-in-out mix-blend-color opacity-70"
           style={{ backgroundColor: activeColor.hexCode }}
         />
         {/* Aesthetic Gradients to simulate volume / texture */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-black/50 via-transparent to-white/10 mix-blend-overlay" />
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-black/20 via-transparent to-white/10 mix-blend-overlay" />
+        <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/60 to-transparent pointer-events-none" />
         
         <div className="absolute top-4 left-4">
         </div>
