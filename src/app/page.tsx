@@ -107,7 +107,7 @@ function HeroSection() {
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           className="text-6xl md:text-8xl lg:text-[10rem] font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-zinc-50 to-zinc-600 mb-8 max-w-6xl leading-[0.85]"
         >
-          Engineered for the streets
+          Define the culture
         </motion.h1>
         
         <motion.button
@@ -246,7 +246,7 @@ export default function KillerFashionHome() {
               KILLER
             </div>
             <p className="text-zinc-500 font-medium max-w-sm text-sm leading-relaxed">
-              Engineered for the streets. We don't follow trends, we build the arsenal for the urban warfare. Pure utility. Zero compromise.
+              Crafted for the urban elite. We don't follow trends, we build the arsenal for the modern aesthetic. Pure utility. Zero compromise.
             </p>
           </div>
           
